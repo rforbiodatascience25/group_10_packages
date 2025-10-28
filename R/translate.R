@@ -4,8 +4,7 @@
 #'
 #' @returns A character string representing the translated amino acid sequence (one-letter code).
 #' @export
-#'
-#' @examples
+
 translate <- function(codons){
   protein <- paste0(codon_table[codons], collapse = "")
   return(protein)
