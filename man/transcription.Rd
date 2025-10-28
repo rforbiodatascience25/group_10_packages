@@ -13,5 +13,8 @@ transcription(dna_seq)
 Substitutes T with U in a given dna seq to generate rna seq
 }
 \description{
-Transcription
+Convert a DNA sequence to RNA by replacing thymine (T) with uracil (U).
+}
+\examples{
+transcription("ATGCTTAGGCTA")
 }
