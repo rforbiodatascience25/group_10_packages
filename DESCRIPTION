@@ -1,0 +1,28 @@
+Package: cdogma
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Molly", "Hong-Minh",
+      email = "molly.hongminh@gmail.com",
+      role = c("aut", "cre")
+    )
+      person(given = "Eden",
+           family = "Levine",
+           role = "aut",
+           email = "s240875@dtu.dk"),
+      person(given = "Vinit",
+           family = "Vasa",
+           role = "aut",
+           email = "vasavinit@gmail.com"),
+          person(given = "Pablo",
+           family = "F",
+           role = "aut",
+           email = "pablo.vivero.22@gmail.com")
+  )
+Description: More about what it does (maybe more than one line).
+    Continuation lines should be indented.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
