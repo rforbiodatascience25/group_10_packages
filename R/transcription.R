@@ -1,4 +1,4 @@
-#' Nucleotide Base Substitution
+#' Transcription
 #'
 #' @param dna_seq dna sequence
 #'
@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-base_subs <- function(dna_seq){
+transcription <- function(dna_seq){
   rna_seq <- gsub("T", "U", dna_seq)
   return(rna_seq)
 }
