@@ -13,5 +13,5 @@ transcription(dna_seq)
 Substitutes T with U in a given dna seq to generate rna seq
 }
 \description{
-Substitute T with U
+Transcription
 }
