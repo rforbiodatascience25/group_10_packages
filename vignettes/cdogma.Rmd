@@ -17,3 +17,33 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(cdogma)
 ```
+
+## what does this package do
+
+this package splits into five parts. The first part will generate random DNA sequence with any length. the second part generates the DNA into RNA sequence. Then the third part splits the sequence into codons, the fourth part translates the codons to amino acids and the fifth part will gererate the amino acids to frequency plot.
+
+### Function one
+
+### Function two
+
+### Function three -
+
+Function three splits the nucleotide sequence into codons.
+
+There are two parameters in this function:
+
+1.  sequence - A character string representing a DNA or RNA sequence.
+2.  start - An integer indicating the starting position (1, 2, or 3) for reading codons. And the default is 1.
+
+The function will return a character vector containing 3-letter codons from the input sequence.
+
+Examples
+
+```{r}
+split_codons("ATGCGATAA")
+split_codons("AUGCGAUAA", start = 2)
+```
+
+### Function four
+
+### Function five
