@@ -10,7 +10,7 @@ transcription(dna_seq)
 \item{dna_seq}{dna sequence}
 }
 \value{
-substitutes T with U in a given dna seq to generate rna seq
+Substitutes T with U in a given dna seq to generate rna seq
 }
 \description{
 Substitute T with U
