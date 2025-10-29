@@ -42,7 +42,7 @@ rna_seq <- transcription(dna_seq)
 rna_seq
 ```
 
-### Function three -
+### Function three - Splitting nucleotide sequence 
 
 Function three splits the nucleotide sequence into codons.
 
