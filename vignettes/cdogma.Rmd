@@ -24,6 +24,21 @@ This package splits into five parts. The first part will generate random DNA seq
 
 ### Function one
 
+The **`create_seq()`** function generates a random DNA sequence of specified length by using R's sample() function which is being made to sample from the four nucleotides with repeats enabled; A, T, G, and C.
+
+There is one parameter in this function:
+
+1.  **gene_size** - A positive integer that determines the length of the DNA sequence
+
+The function returns a **character string** containing the DNA sequence which will then be transcripted and translated by the next functions.
+
+Example:
+
+```{r}
+dna_seq <- create_seq(20)
+dna_seq
+```
+
 ### Function two - Transcription
 
 The **`transcription()`** function converts DNA to RNA by replacing the base **thymine (T)** with **uracil (U)**.
@@ -42,7 +57,7 @@ rna_seq <- transcription(dna_seq)
 rna_seq
 ```
 
-### Function three - Splitting nucleotide sequence 
+### Function three - Splitting nucleotide sequence
 
 Function three splits the nucleotide sequence into codons.
 
