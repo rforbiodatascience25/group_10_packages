@@ -1,0 +1,151 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# cdogma
+
+``` r
+library(cdogma)
+```
+
+## What does this package do
+
+This package splits into five parts. The first part will generate random
+DNA sequence with any length. The second part converts the DNA into RNA
+sequence. The third part splits the sequence into codons, the fourth
+part translates the codons to amino acids and the fifth part will
+gererate the amino acids to frequency plot.
+
+### Function one - Create sequence
+
+The **`create_seq()`** function generates a random DNA sequence of
+specified length by using R’s sample() function which is being made to
+sample from the four nucleotides with repeats enabled; A, T, G, and C.
+
+There is one parameter in this function:
+
+1.  **gene_size** - A positive integer that determines the length of the
+    DNA sequence
+
+The function returns a **character string** containing the DNA sequence
+which will then be transcripted and translated by the next functions.
+
+Example:
+
+``` r
+dna_seq <- create_seq(50)
+dna_seq
+#> [1] "GGATAACGACTATCAGCTGGACAAAGACAGGTACATCGCGGAATTTATAC"
+```
+
+### Function two - Transcription
+
+The **`transcription()`** function converts DNA to RNA by replacing the
+base **thymine (T)** with **uracil (U)**.
+
+There is one parameter in this function:
+
+1.  **dna_seq** – A character string representing a DNA sequence (e.g.,
+    `"ATGCTTAGGCTA"`)
+
+The function returns a **character string** containing the RNA sequence
+generated from the input DNA sequence.
+
+Example:
+
+``` r
+rna_seq <- transcription(dna_seq)
+rna_seq
+#> [1] "GGAUAACGACUAUCAGCUGGACAAAGACAGGUACAUCGCGGAAUUUAUAC"
+```
+
+### Function three - Splitting nucleotide sequence
+
+Function three splits the nucleotide sequence into codons.
+
+There are two parameters in this function:
+
+1.  **sequence** - A character string representing a DNA or RNA
+    sequence.
+2.  **start** - An integer indicating the starting position (1, 2, or 3)
+    for reading codons. And the default is 1.
+
+The function will return a character vector containing 3-letter codons
+from the input sequence.
+
+Example:
+
+``` r
+rna_seq_split <- split_codons(rna_seq)
+rna_seq_split
+#>  [1] "GGA" "UAA" "CGA" "CUA" "UCA" "GCU" "GGA" "CAA" "AGA" "CAG" "GUA" "CAU"
+#> [13] "CGC" "GGA" "AUU" "UAU"
+split_codons("AUGCGAUAA", start = 2)
+#> [1] "UGC" "GAU"
+```
+
+### Function four - Translation
+
+Function four translates a character vector of RNA codons into a protein
+sequence using the standard codon table.
+
+There is one parameter in this function:
+
+1.  **codons** – A character vector containing RNA codons (each a
+    3-letter string, e.g., `"AUG"`, `"UUU"`).
+
+The function will return a character string representing the translated
+amino acid sequence in the one-letter amino acid code.
+
+``` r
+protein_seq <- translate(rna_seq_split)
+protein_seq
+#> [1] "G_RLSAGQRQVHRGIY"
+```
+
+### Function five - Amino Acid Frequencies
+
+The **`aa_frequencies()`** function plots the frequency of each amino
+acid in a given protein sequence.
+
+There is one parameter in this function:
+
+1.  **protein_seq** – A character string representing a protein sequence
+    (e.g., `"MKTFFVAGL"`)
+
+The function returns a **bar plot** showing how often each amino acid
+appears in the sequence.
+
+Example:
+
+``` r
+aa_frequencies(protein_seq)
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.svg" width="100%" />
+
+### Discussion
+
+The **cdogma** package carries out the central dogma by converting DNA
+to RNA to protein.It can count and visualize amino acid frequencies,
+making it useful for simple sequence analysis tasks.Future updates could
+add features such as reverse transcription or tools for analyzing how
+often certain codons appear.
+
+In general it is a good idea to limit the number of dependencies your
+package has. This can avoid compatibility issues if other packages are
+updates and can also reduce installation time.
+
+Sometimes, however, this is unavoidable when external packages offer
+features that would be more difficult to recreate. For example ggplot2
+is a very powerful tool for data visualisation and makes plotting much
+more efficient.
+
+The difference between `@importFrom` and `package::function()` is mainly
+about how you access a function.
+
+`@importFrom` lets you use a function directly without typing the
+package name each time because it loads that function into your
+package’s namespace, while `package::function()` clearly shows which
+package the function comes from. Using `package::function()` is often
+safer in small packages as it helps prevent name mix-ups between
+packages.

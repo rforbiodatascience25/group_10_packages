@@ -1,6 +1,6 @@
 ---
 title: "Central Dogma of Molecular Biology"
-output: rmarkdown::html_vignette
+output: rmarkdown::github_document
 vignette: >
   %\VignetteIndexEntry{cdogma}
   %\VignetteEngine{knitr::rmarkdown}
